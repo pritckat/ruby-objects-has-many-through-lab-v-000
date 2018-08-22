@@ -1,4 +1,6 @@
-class Genre 
+class Genre
+
+  attr_accessor :name
 
   @@all = []
 
@@ -10,5 +12,21 @@ class Genre
   def self.all
     @@all
   end
-  
+
+  def new_song(name, artist)
+    song = Song.new
+    song.name = name
+    song.artist = artist
+    song.genre = self
+  end
+
+  def songs
+    Song.all.select do |song|
+      song.genre == self
+    end
+  end
+
+  def artists
+  end
+
 end
