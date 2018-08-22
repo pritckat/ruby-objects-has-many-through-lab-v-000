@@ -25,6 +25,9 @@ class Genre
   end
 
   def artists
+    Genre.songs.select do |song|
+      song.artist
+    end
   end
 
 end
