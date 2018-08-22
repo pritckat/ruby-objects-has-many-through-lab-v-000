@@ -24,8 +24,8 @@ class Doctor
   end
 
   def patients
-    Patient.all.map do |patient|
-      patient.doctor == self
+    self.appointments.map do |song|
+      song.patient
     end
   end
 
